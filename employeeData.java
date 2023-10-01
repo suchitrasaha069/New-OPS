@@ -27,13 +27,32 @@ public class employeeData{
     // emp1.setData(2, "Shyam");  // Using setter method
     // emp1.getData();    //  Using getter method
 
-    System.out.print("Enter Employee id : ");
-    emp_id = input.nextInt();
-    input.nextLine();
-    System.out.print("Enter Employee name : ");
-    emp_name = input.nextLine();
-    Employee emp = new Emp(emp_id, emp_name);
+    Scanner input = new Scanner(System.in);
+    int n, i, emp_id;
+    String emp_name;
 
-    emp.getData();
+    System.out.print("Enter the Number of Employees : ");
+    n = input.nextInt();
+
+    Employee[] emp = new Employee[n];
+    
+    for (i=0; i<n; i++)
+    {
+      System.out.print("Employee " + (i+1) + "-->\nEnter Employee id : ");
+      emp_id = input.nextInt();
+      input.nextLine();
+      System.out.print("Enter Employee name : ");
+      emp_name = input.nextLine();
+      emp[i] = new Employee(emp_id, emp_name);
+    }
+
+    System.out.print("\nShowing data ---\n\n");
+
+    for (i=0; i<n; i++)
+    {
+      emp[i].getData(i+1);
+    }
+
+    // emp.getData();
   }
 }

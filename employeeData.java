@@ -14,8 +14,7 @@ class Employee{
   }
 
   Employee (int id, String name){
-    this.emp_id = id;
-    this.emp_name = name;
+    this.setData(id, name);
   }
 }
 
